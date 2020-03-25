@@ -14,8 +14,11 @@ void led_init(){
 
 
 int led_update(){
-  char ledFlags = redVal[red_on] | greenVal[green_on];
+  char ledFlags = 0;
+
+  ledFlags |= red_on ? 0: LED_RED;
+  ledFlags |= green_on ? 0: LED_GREEN;
   
-  P1OUT &= (0xff^LEDS) | ledflags;
+  P1OUT &= (0xff^LEDS) | ledFlags;
   P1OUT |= ledFlags;
 }

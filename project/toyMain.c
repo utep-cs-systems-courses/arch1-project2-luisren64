@@ -6,11 +6,12 @@
 #include "buzzer.h"
 
 
-int main(){
+void main(void){
+  
   configureClocks();
   led_init();
   switch_init();
   buzzer_init();
-  
-  return 0;
+  enableWDTInterrupts();
+  or_sr(0x18);
 }
