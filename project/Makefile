@@ -14,7 +14,7 @@ install:
 
 all: toy.elf
 
-toy.elf: ${COMMON_OBJECTS}  stateMachines.o led.o switches.o buzzer.o wdInterruptHandler.o p2_interrupt_handler.o ../demos/lib/libTimer.a toyMain.o
+toy.elf: ${COMMON_OBJECTS}  stateMachines.o led.o switches.o buzzer.o wdInterruptHandler.o p2_interrupt_handler.o toyMain.o ../demos/lib/libTimer.a
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^
 
 load: toy.elf

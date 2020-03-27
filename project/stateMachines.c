@@ -4,7 +4,7 @@
 #include "buzzer.h"
 #include "switches.h"
 
-char state = 0; 
+int state = 0; 
 
 void state_advance(){
   switch(state){
@@ -21,8 +21,8 @@ void state_advance(){
     buzzer_set_period(5405); led_update();
     break;
   default:
-    red_on = 1; green_on = 0;
-    buzzer_set_period(5405); led_update();
+    red_on = 1; green_on = 1;
+    buzzer_set_period(6000); led_update();
     break;
   }
 }

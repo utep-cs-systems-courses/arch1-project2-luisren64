@@ -1,7 +1,7 @@
 #ifndef stateMAchine_included
 #define stateMachine_included
 
-extern char state;
+extern int state;
 
 void state_advance();
 
