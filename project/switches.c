@@ -8,7 +8,7 @@ static char switch_update_interrupt_sense(){
   char p2val = P2IN;
   //
   P2IES |= (p2val & SWITCHES);
-  //P2IES &= (p2val | ~SWITCHES);
+  P2IES &= (p2val | ~SWITCHES);
   return p2val;
 }
 
@@ -22,10 +22,10 @@ void switch_init(){
 
 void switch_interrupt_handler(){
   char p2val = switch_update_interrupt_sense();
-  switch1 = (p2val & SW1) ? 1 : 0;
-  switch2 = (p2val & SW2) ? 1 : 0;
-  switch3 = (p2val & SW3) ? 1 : 0;
-  switch4 = (p2val & SW4) ? 1 : 0;
+  switch1 = (p2val & SW1) ? 0 : 1;
+  switch2 = (p2val & SW2) ? 0 : 1;
+  switch3 = (p2val & SW3) ? 0 : 1;
+  switch4 = (p2val & SW4) ? 0 : 1;
   
   if (switch1){
     state = 1;
@@ -38,8 +38,5 @@ void switch_interrupt_handler(){
   }
   else if (switch4){
     state = 4;
-  }
-  else{
-    state=0;
   }
 }
