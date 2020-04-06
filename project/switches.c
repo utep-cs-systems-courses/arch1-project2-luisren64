@@ -1,6 +1,6 @@
 #include <msp430.h>
 #include "switches.h"
-#include "stateMachines.h"
+#include "stateMachinesAssembly.h"
 
 char switch1, switch2, switch3, switch4;
 

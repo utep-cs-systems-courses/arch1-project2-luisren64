@@ -29,10 +29,10 @@ led.o: led.c led.h
 
 buzzer.o: buzzer.c buzzer.h
 
-wdInterruptHandler.o: stateMachines.h
+wdInterruptHandler.o: stateMachinesAssembly.h
 
 p2_interrupt_handler.o: switches.h
 
-stateMachines.o: stateMachines.c stateMachines.h
+stateMachines.o: stateMachinesAssembly.s stateMachinesAssembly.h
 
 switches.o: switches.h switches.c
